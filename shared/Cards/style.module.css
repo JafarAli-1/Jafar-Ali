@@ -1,0 +1,21 @@
+.imgProjects {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.linkDemo {
+  color: inherit;
+  text-decoration: none;
+}
+
+@media (max-width: 991px) {
+  .card {
+    width: 100% !important;
+  }
+
+  .flexBoxCards {
+    width: 100% !important;
+    padding-left: unset !important;
+  }
+}

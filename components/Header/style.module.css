@@ -1,0 +1,55 @@
+.control {
+  display: block;
+  padding: var(--mantine-spacing-xs) 10px;
+  border-radius: var(--mantine-radius-md);
+  font-weight: 500;
+  cursor: pointer;
+
+  @mixin hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      var(--mantine-color-dark-6)
+    );
+  }
+}
+
+.icon {
+  width: rem(22px);
+  height: rem(22px);
+}
+
+.dark {
+  @mixin dark {
+    display: none;
+  }
+
+  @mixin light {
+    display: block;
+  }
+}
+
+.light {
+  @mixin light {
+    display: none;
+  }
+
+  @mixin dark {
+    display: block;
+  }
+}
+
+.iconSearch {
+  @mixin hover {
+    background-color: light-dark(
+      var(--mantine-color-gray-0),
+      var(--mantine-color-dark-6)
+    );
+  }
+}
+
+@media (max-width: 991px) {
+  .header {
+    padding-left: unset !important;
+    padding-right: unset !important;
+  }
+}
