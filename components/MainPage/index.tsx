@@ -23,7 +23,6 @@ import {
   IconNote,
 } from "@tabler/icons-react";
 import Cards from "@/shared/Cards";
-// import MyResume from "@/public/JafarAli-Frontend Engineer.pdf"
 
 export default function MainPage() {
   const [opened, { toggle }] = useDisclosure();

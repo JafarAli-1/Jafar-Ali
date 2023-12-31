@@ -8,6 +8,50 @@ import IBS from "@/public/IBS.png";
 import Najah from "@/public/Najah.png";
 
 export default function Cards() {
+  const cardData = [
+    {
+      image: Premitto,
+      alt: "Premitto Projects",
+      title: "Premitto",
+      state: "Done",
+      description:
+        "Website offers a variety of deals and discounts in the United Arab Emirates",
+      href: "https://www.premitto.com/",
+    },
+    {
+      image: Najah,
+      alt: "Al Najah Projects",
+      title: " Al Najah Sponge Machines",
+      state: "Done",
+      description: "Sponge Machinery Industry Company",
+      href: "https://alnajahspongemachines.com/",
+    },
+    {
+      image: RussailProjects,
+      alt: "Russail Projects",
+      title: "RUSSAIL WATER",
+      state: "Done",
+      description:
+        "Russail Water is a product that sells clean water in the United Arab Emirates",
+      href: "https://russailwater.ae/en",
+    },
+    {
+      image: IBS,
+      alt: "IBS Project",
+      title: "University in Germany",
+      state: "Done",
+      description: "German university website",
+      href: "https://folioibsweb.meta-itech.com/",
+    },
+    {
+      image: ElardProjects,
+      alt: "Elard Projects",
+      title: "ELARD Group",
+      state: "Done",
+      description: "Website for renewable energy solutions in the Middle East",
+      href: "https://elardweb.meta-itech.com/en",
+    },
+  ];
   return (
     <Flex
       w="80%"
@@ -19,208 +63,44 @@ export default function Cards() {
       wrap="wrap"
       className={classes.flexBoxCards}
     >
-      {/* First Card */}
+      {cardData.map((data, index) => (
+        <Card
+          key={index}
+          w="45%"
+          shadow="sm"
+          padding="lg"
+          radius="md"
+          withBorder
+          className={classes.card}
+        >
+          <Card.Section>
+            <Image
+              src={data.image}
+              className={classes.imgProjects}
+              alt={data.alt}
+            />
+          </Card.Section>
 
-      <Card
-        w="45%"
-        shadow="sm"
-        padding="lg"
-        radius="md"
-        withBorder
-        className={classes.card}
-      >
-        <Card.Section>
-          <Image
-            src={Premitto}
-            className={classes.imgProjects}
-            alt="Premitto Projects"
-          />
-        </Card.Section>
+          <Group justify="space-between" mt="md" mb="xs">
+            <Text fw={500} lineClamp={1}>
+              {data.title}
+            </Text>
+            <Badge color="teal" variant="light">
+              {data.state}
+            </Badge>
+          </Group>
 
-        <Group justify="space-between" mt="md" mb="xs">
-          <Text fw={500} lineClamp={1}>
-            Premitto
+          <Text size="sm" c="dimmed">
+            {data.description}
           </Text>
-          <Badge color="teal" variant="light">
-            Done
-          </Badge>
-        </Group>
 
-        <Text size="sm" c="dimmed">
-          Website offers a variety of deals and discounts in the United Arab
-          Emirates
-        </Text>
-
-        <a
-          target="_blank"
-          href="https://www.premitto.com/"
-          className={classes.linkDemo}
-        >
-          <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-            View
-          </Button>
-        </a>
-      </Card>
-
-      {/* Second Card */}
-
-      <Card
-        w="45%"
-        shadow="sm"
-        padding="lg"
-        radius="md"
-        withBorder
-        className={classes.card}
-      >
-        <Card.Section>
-          <Image
-            src={Najah}
-            className={classes.imgProjects}
-            alt="Al Najah Projects"
-          />
-        </Card.Section>
-
-        <Group justify="space-between" mt="md" mb="xs">
-          <Text fw={500} lineClamp={1}>
-            Al Najah Sponge Machines
-          </Text>
-          <Badge color="teal" variant="light">
-            Done
-          </Badge>
-        </Group>
-
-        <Text size="sm" c="dimmed">
-          Sponge Machinery Industry Company
-        </Text>
-
-        <a
-          target="_blank"
-          href="https://alnajahspongemachines.com/"
-          className={classes.linkDemo}
-        >
-          <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-            View
-          </Button>
-        </a>
-      </Card>
-
-      {/* Third Card */}
-      <Card
-        w="45%"
-        shadow="sm"
-        padding="lg"
-        radius="md"
-        withBorder
-        className={classes.card}
-      >
-        <Card.Section>
-          <Image
-            src={RussailProjects}
-            className={classes.imgProjects}
-            alt="Russail Projects"
-          />
-        </Card.Section>
-
-        <Group justify="space-between" mt="md" mb="xs">
-          <Text fw={500}>RUSSAIL WATER</Text>
-          <Badge color="teal" variant="light">
-            Done
-          </Badge>
-        </Group>
-
-        <Text size="sm" c="dimmed">
-          Russail Water is a product that sells clean water in the United Arab
-          Emirates
-        </Text>
-
-        <a
-          target="_blank"
-          href="https://russailwater.ae/en"
-          className={classes.linkDemo}
-        >
-          <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-            View
-          </Button>
-        </a>
-      </Card>
-
-      {/* Fourth Card */}
-      <Card
-        w="45%"
-        shadow="sm"
-        padding="lg"
-        radius="md"
-        withBorder
-        className={classes.card}
-      >
-        <Card.Section>
-          <Image src={IBS} className={classes.imgProjects} alt="IBS Project" />
-        </Card.Section>
-
-        <Group justify="space-between" mt="md" mb="xs">
-          <Text fw={500} lineClamp={1}>
-            University in Germany
-          </Text>
-          <Badge color="teal" variant="light">
-            Done
-          </Badge>
-        </Group>
-
-        <Text size="sm" c="dimmed">
-          German university website
-        </Text>
-
-        <a
-          target="_blank"
-          href="https://folioibsweb.meta-itech.com/"
-          className={classes.linkDemo}
-        >
-          <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-            View
-          </Button>
-        </a>
-      </Card>
-
-      {/* Fifth Card */}
-      <Card
-        w="45%"
-        shadow="sm"
-        padding="lg"
-        radius="md"
-        withBorder
-        className={classes.card}
-      >
-        <Card.Section>
-          <Image
-            src={ElardProjects}
-            className={classes.imgProjects}
-            alt="Elard Projects"
-          />
-        </Card.Section>
-
-        <Group justify="space-between" mt="md" mb="xs">
-          <Text fw={500} lineClamp={1}>
-            ELARD Group
-          </Text>
-          <Badge color="teal" variant="light">
-            Done
-          </Badge>
-        </Group>
-
-        <Text size="sm" c="dimmed">
-          Website for renewable energy solutions in the Middle East
-        </Text>
-
-        <a
-          target="_blank"
-          href="https://elardweb.meta-itech.com/en"
-          className={classes.linkDemo}
-        >
-          <Button variant="light" color="blue" fullWidth mt="md" radius="md">
-            View
-          </Button>
-        </a>
-      </Card>
+          <a target="_blank" href={data.href} className={classes.linkDemo}>
+            <Button variant="light" color="blue" fullWidth mt="md" radius="md">
+              View
+            </Button>
+          </a>
+        </Card>
+      ))}
     </Flex>
   );
 }
